@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trung Thu Vui Vẻ — Phần quà cho Em yêu 💖</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            moon: '#fff9ea',
+            amberlight: '#ffb86b',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+            glow: { '0%,100%': { opacity: 0.8 }, '50%': { opacity: 1 } },
+          },
+          animation: {
+            float: 'float 3s ease-in-out infinite',
+            glow: 'glow 2s ease-in-out infinite',
+          }
+        }
+      }
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-to-b from-[#071028] via-[#0b1630] to-[#2b1b4a] text-white font-[Quicksand] min-h-screen flex flex-col items-center justify-center px-4 text-center">
+
+  <!-- Tiêu đề -->
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-[Playfair_Display] text-amber-200 drop-shadow-lg mb-4 animate-glow">
+    💖 Xin Chào Bé iuu 💖
+  </h1>
+  <p class="text-amber-100/90 mb-8 max-w-md">
+    Chúc bé có một ngày <b>Trung Thu thật vui vẻ</b> — trăng sáng như lòng anh, lồng đèn lung linh như nụ cười em hí hí 
+  </p>
+
+  <!-- Trăng -->
+   
+  <div class="w-44 h-44 bg-gradient-to-br from-moon to-amberlight rounded-full shadow-[0_0_60px_rgba(255,230,180,0.3)] animate-float flex items-center justify-center mb-10">
+    🌕
+  </div>
+
+  <!-- Hộp quà -->
+  <div id="giftBox" class="relative w-36 h-36 bg-gradient-to-b from-pink-400 to-rose-500 rounded-2xl shadow-xl cursor-pointer transform transition hover:scale-105 active:scale-95 flex flex-col items-center justify-center">
+    <div class="absolute -top-3 w-36 h-6 bg-rose-300 rounded-t-xl"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-yellow-200 w-6 h-5 rounded-full"></div>
+    <span class="text-4xl mt-4 animate-bounce">🎁</span>
+    <p class="mt-3 text-sm font-semibold">Nhấn để mở quà!</p>
+  </div>
+
+  <!-- Khung thông tin thẻ cào (ẩn ban đầu) -->
+  <div id="giftCard" class="hidden mt-8 bg-gradient-to-r from-amber-200 to-yellow-100 text-[#3b1b00] rounded-2xl shadow-2xl p-6 w-[90%] sm:w-80 mx-auto">
+    <h2 class="text-xl font-semibold mb-3">🎉 Phần quà Trung Thu của em 🎉</h2>
+    <p><b>Nhà mạng:</b> Viettel</p>
+    <p><b>Mệnh giá:</b> 50.000đ</p>
+    <p><b>Mã thẻ:</b> <span class="font-mono text-lg tracking-widest">8934-6521-1978-4523</span></p>
+    <button onclick="hideGift()" class="mt-5 bg-rose-400 text-white px-4 py-2 rounded-xl hover:bg-rose-500 transition">Đóng</button>
+  </div>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-4 text-sm text-amber-100/70">
+    🌸 Cao Quỳnh Anh — Anh yêu em 🌸
+  </footer>
+
+  <script>
+    const giftBox = document.getElementById('giftBox');
+    const giftCard = document.getElementById('giftCard');
+
+    giftBox.addEventListener('click', () => {
+      giftBox.classList.add('hidden');
+      giftCard.classList.remove('hidden');
+    });
+
+    function hideGift() {
+      giftCard.classList.add('hidden');
+      giftBox.classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
